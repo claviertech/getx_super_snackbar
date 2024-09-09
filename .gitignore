@@ -1,0 +1,50 @@
+
+# Dart/Pub related
+.dart_tool/
+.packages
+build/
+pubspec.lock
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code related
+.vscode/
+
+# Flutter/Dart package related
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+
+# macOS
+.DS_Store
+
+# Coverage
+coverage/
+
+# Documentation
+doc/api/
+
+# Temporary files
+.temp/
+.tmp/
+
+# Example app build directories
+example/build/
+example/.dart_tool/
+example/.packages
+
+# Avoid committing generated files
+*.g.dart
+*.freezed.dart
+
+# Avoid committing generated mocks
+*.mocks.dart
+
+# Avoid committing generated l10n files
+lib/generated/
+
