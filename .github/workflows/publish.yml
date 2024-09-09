@@ -33,23 +33,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          sdk: 'stable'
+          flutter-version: 'stable'  # Specify the Flutter version
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get  # Use flutter pub instead of dart pub
 
       - name: Publish package
         env:
-          PUB_DEV_TOKEN: ${{ secrets.PUB_DEV_TOKEN }}
+          PUB_DEV_TOKEN: ${{ secrets.PUB_CREDENTIALS }}
         run: |
           # Create the credentials file for pub.dev
-          echo "//pub.dev: _token=${PUB_CREDENTIALS}" > ~/.pub-cache/credentials.json
+          echo "//pub.dev: _token=${PUB_DEV_TOKEN}" > ~/.pub-cache/credentials.json
           
           # Optional: Test publishing
-          dart pub publish --dry-run
+          flutter pub publish --dry-run  # Use flutter pub instead of dart pub
           
           # Publish the package
-          dart pub publish --force
+          flutter pub publish --force  # Use flutter pub instead of dart pub
