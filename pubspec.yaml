@@ -1,7 +1,24 @@
 name: getx_super_snackbar
-description: "Getx snackbar package"
-version: 1.0.1
+description: |
+  GetX Super Snackbar is a powerful, flexible, and easy-to-use snackbar package for Flutter applications, 
+  built on top of the popular GetX package. It allows developers to create highly customizable snackbars 
+  that can be used to display a variety of messages such as success, error, warning, and informational alerts.
+
+  With GetX Super Snackbar, you can:
+
+  - Customize the appearance of your snackbars with different colors, icons, and animations.
+  - Easily integrate with existing GetX projects, ensuring a seamless developer experience.
+  - Display snackbars with or without user interaction, and control their duration and position on the screen.
+  - Use predefined themes or create your own to maintain a consistent look and feel throughout your application.
+
+  This package is ideal for developers looking to enhance user feedback mechanisms in their Flutter apps, 
+  providing users with instant, visually appealing notifications that are easy to implement and manage."
+
+version: 1.0.2
 homepage: https://github.com/claviertech/getx_super_snackbar
+repository: https://github.com/claviertech/getx_super_snackbar
+issue_tracker: https://github.com/claviertech/getx_super_snackbar/issues
+documentation: https://github.com/claviertech/getx_super_snackbar/wiki
 
 environment:
   sdk: ">=3.4.0 <4.0.0"

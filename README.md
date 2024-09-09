@@ -108,7 +108,3 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## License
 
 This package is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
----
-
-This README should give users a clear understanding of how to use your `getx_super_snackbar` package and its features.
