@@ -1,6 +1,6 @@
 name: getx_super_snackbar
 description: "Getx snackbar package"
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/claviertech/getx_super_snackbar
 
 environment:
