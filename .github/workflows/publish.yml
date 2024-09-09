@@ -1,44 +1,15 @@
-name: CI and Publish
+name: Publish to Pub.dev
 
-on:
-  push:
-    branches:
-      - main # Change this to your default branch if different
-  release:
-    types: [published]
+on: push
 
 jobs:
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
-
-  #     - name: Set up Flutter
-  #       uses: subosito/flutter-action@v2
-  #       with:
-  #         flutter-version-channel: "stable"
-
-  #     - name: Install dependencies
-  #       run: flutter pub get
-
-  #     - name: Run tests
-  #       run: flutter test
-  # tests:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2.3.4
-
-  #     - name: 🔧 Setup Dart SDK
-  #       uses: dart-lang/setup-dart@v1.0
-
   publishing:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout"
+      - name: 'Checkout'
         uses: actions/checkout@main # required!
-
-      - name: ">> Dart package <<"
+        
+      - name: '>> Dart package <<'
         uses: k-paxian/dart-package-publisher@master
         with:
           accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
