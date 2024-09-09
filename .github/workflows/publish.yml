@@ -32,15 +32,14 @@ jobs:
       - name: 🔧 Setup Dart SDK
         uses: dart-lang/setup-dart@v1.0
 
-  publish-to-pub:
+  publishing:
     runs-on: ubuntu-latest
-    # needs: [tests] # only runs after the job successfully finishes
     steps:
-      - uses: actions/checkout@v2.3.4
+      - name: "Checkout"
+        uses: actions/checkout@main # required!
 
-      - name: 🔧 Setup Dart SDK
-        uses: dart-lang/setup-dart@v1.0 # setups dart sdk on this machine
-      - name: 🚀Publish
-        uses: RatakondalaArun/pub.dev-cd@v1
+      - name: ">> Dart package <<"
+        uses: k-paxian/dart-package-publisher@master
         with:
-          creditionals: ${{secrets.PUB_CREDITIONALS}}
+          accessToken: ${{ secrets.OAUTH_ACCESS_TOKEN }}
+          refreshToken: ${{ secrets.OAUTH_REFRESH_TOKEN }}
