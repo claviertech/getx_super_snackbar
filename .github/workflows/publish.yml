@@ -27,16 +27,17 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    # needs: test
-    # if: github.event_name == 'release'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          sdk: "stable"
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
 
       - name: Setup Pub Credentials
         env:
