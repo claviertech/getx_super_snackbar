@@ -1,7 +1,3 @@
-Here's a README file for your `getx_super_snackbar` package:
-
----
-
 # GetxSuperSnackbar
 
 `GetxSuperSnackbar` is a Flutter package that extends the functionality of GetX's `Snackbar` to provide more flexible and customizable snackbar notifications. Whether you need to show success, error, warning, info, or custom messages, `GetxSuperSnackbar` makes it easy to display beautiful and responsive snackbars in your Flutter applications.
