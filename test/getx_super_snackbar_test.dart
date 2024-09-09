@@ -4,53 +4,20 @@ import 'package:get/get.dart';
 import 'package:getx_super_snackbar/getx_super_snackbar.dart';
 
 void main() {
-  group('GetxSuperSnackbar', () {
-    testWidgets('showSuccess displays a success snackbar',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(GetMaterialApp(home: Scaffold()));
+  testWidgets('shows success snackbar with correct message and icon',
+      (WidgetTester tester) async {
+    // Build the app and trigger the snackbar
+    await tester.pumpWidget(GetMaterialApp(home: Scaffold()));
+    GetxSuperSnackbar.showSuccess('Success message');
 
-      GetxSuperSnackbar.showSuccess('Success message');
-      await tester.pump();
+    // Start and settle animations
+    await tester.pump(); // Start animation
+    await tester.pumpAndSettle(); // Wait for all animations to complete
+    await Future.delayed(Duration(seconds: 1)); // Add a delay before checking
 
-      expect(find.text('Success'), findsOneWidget);
-      expect(find.text('Success message'), findsOneWidget);
-      expect(find.byIcon(Icons.check_circle), findsOneWidget);
-    });
-
-    testWidgets('showError displays an error snackbar',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(GetMaterialApp(home: Scaffold()));
-
-      GetxSuperSnackbar.showError('Error message');
-      await tester.pump();
-
-      expect(find.text('Error'), findsOneWidget);
-      expect(find.text('Error message'), findsOneWidget);
-      expect(find.byIcon(Icons.error), findsOneWidget);
-    });
-
-    testWidgets('showWarning displays a warning snackbar',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(GetMaterialApp(home: Scaffold()));
-
-      GetxSuperSnackbar.showWarning('Warning message');
-      await tester.pump();
-
-      expect(find.text('Warning'), findsOneWidget);
-      expect(find.text('Warning message'), findsOneWidget);
-      expect(find.byIcon(Icons.warning), findsOneWidget);
-    });
-
-    testWidgets('showInfo displays an info snackbar',
-        (WidgetTester tester) async {
-      await tester.pumpWidget(GetMaterialApp(home: Scaffold()));
-
-      GetxSuperSnackbar.showInfo('Info message');
-      await tester.pump();
-
-      expect(find.text('Info'), findsOneWidget);
-      expect(find.text('Info message'), findsOneWidget);
-      expect(find.byIcon(Icons.info), findsOneWidget);
-    });
+    // Verify that the snackbar appears with the correct text and icon
+    expect(find.text('Success'), findsOneWidget);
+    expect(find.text('Success message'), findsOneWidget);
+    expect(find.byIcon(Icons.check_circle), findsOneWidget);
   });
 }

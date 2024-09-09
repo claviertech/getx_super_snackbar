@@ -164,50 +164,24 @@ class GetxSuperSnackbar {
     bool isDismissible = true,
     DismissDirection dismissDirection = DismissDirection.horizontal,
   }) {
+    Get.closeAllSnackbars(); // Close any existing snackbars
     Get.snackbar(
-      '',
-      '',
+      title,
+      message,
       snackPosition: snackPosition,
       backgroundColor: backgroundColor,
       colorText: colorText,
       duration: duration,
-      shouldIconPulse: false,
-      boxShadows: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.2),
-          blurRadius: 4,
-          spreadRadius: 2,
-          offset: const Offset(0, 2),
-        ),
-      ],
+      icon: Icon(icon, color: colorText),
+      onTap: onTap != null ? (_) => onTap() : null,
+      mainButton: mainButton,
       maxWidth: maxWidth ?? 400,
       barBlur: barBlur ?? 10,
       isDismissible: isDismissible,
       dismissDirection: dismissDirection,
-      margin: margin ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      borderRadius: borderRadius ?? 12,
-      titleText: Text(
-        title,
-        style: TextStyle(
-          color: colorText,
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-        ),
-      ),
-      messageText: Text(
-        message,
-        style: TextStyle(
-          color: colorText,
-          fontSize: 14,
-        ),
-      ),
-      icon: Icon(
-        icon,
-        color: colorText,
-        size: 24,
-      ),
-      onTap: onTap != null ? (_) => onTap() : null,
-      mainButton: mainButton,
+      forwardAnimationCurve: Curves.easeOutCirc,
+      reverseAnimationCurve: Curves.easeOutCirc,
+      animationDuration: const Duration(milliseconds: 500),
     );
   }
 
